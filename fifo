@@ -609,7 +609,7 @@ install_bootloader(){
     print_warning "\tBIOS Mode Detected"
     bootloaders_list=("Grub2" "Syslinux" "Skip")
   fi
-  PS3="$prompt1"
+  PS3="1"
   echo -e "Install bootloader:\n"
   select bootloader in "${bootloaders_list[@]}"; do
     case "$REPLY" in
@@ -642,7 +642,7 @@ configure_bootloader(){
       print_title "GRUB2 - https://wiki.archlinux.org/index.php/GRUB2"
       print_info "GRUB2 is the next generation of the GRand Unified Bootloader (GRUB).\nIn brief, the bootloader is the first software program that runs when a computer starts. It is responsible for loading and transferring control to the Linux kernel."
       grub_install_mode=("Automatic" "Manual")
-      PS3="$prompt1"
+      PS3="1"
       echo -e "Grub Install:\n"
       select OPT in "${grub_install_mode[@]}"; do
         case "$REPLY" in
